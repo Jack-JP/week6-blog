@@ -1,4 +1,4 @@
-@include('layouts.partials.header')
+@include('layouts.header')
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
@@ -51,4 +51,4 @@
 
     </div>
 
-@include('layouts.partials.footer')
+@include('layouts.footer')

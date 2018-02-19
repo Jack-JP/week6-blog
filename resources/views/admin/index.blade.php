@@ -1,19 +1,30 @@
 @extends('layouts.app')
 
-@section('title', 'All posts')
+@section('title', 'Admin page')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card card-default">
-                <div class="card-header">Dashboard</div>
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2">
+        <div class="card bg-info">
+            <div class="card-header">Dashboard</div>
 
-                <div class="card-body">
-                  admin area
-                </div>
+            <div class="card-body bg-light">
+                <p>sidebar</p>
             </div>
         </div>
+      </div>
+      <div class="col-md-10">
+
+
+          <div class="card card-info">
+              <div class="card-header">Dashboard</div>
+
+              <div class="card-body">
+                  <p>main</p>
+              </div>
+          </div>
+      </div>
     </div>
 </div>
 @endsection
