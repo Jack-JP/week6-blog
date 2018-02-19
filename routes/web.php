@@ -5,9 +5,7 @@
 | Public post Routes
 |--------------------------------------------------------------------------
 */
-Route::get('/', function(){
- return view('post.index');
-});
+Route::get('/', 'PostController@index');
 
 
 Auth::routes();
