@@ -20,3 +20,10 @@ Auth::routes();
 Route::get('/admin', function(){
  return view('admin.index');
 });
+
+/*
+|--------------------------------------------------------------------------
+| Category Routes
+|--------------------------------------------------------------------------
+*/
+Route::resource('/admin/category', 'CategoryController');

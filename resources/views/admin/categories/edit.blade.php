@@ -1,19 +1,24 @@
 @extends('layouts.app')
 
-@section('title', 'Edit')
+@section('title', 'Admin page')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card card-default">
-                <div class="card-header">Dashboard</div>
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2">
+        @include('admin.layouts.admin_sidebar')
+      </div>
+      <div class="col-md-10">
 
-                <div class="card-body">
-                    <p>Admin edit categories</p>
-                </div>
-            </div>
-        </div>
+
+          <div class="card card-info">
+              <div class="card-header">Dashboard</div>
+
+              <div class="card-body">
+                  <p>edit</p>
+              </div>
+          </div>
+      </div>
     </div>
 </div>
 @endsection

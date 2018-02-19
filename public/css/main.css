@@ -1,3 +1,6 @@
 .sb{
   border: solid 1px red;
 }
+.list_sidebar{
+  padding: 0;
+}

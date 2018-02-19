@@ -9,12 +9,12 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        return "Index";
+      return view('admin.categories.index');
     }
 
     public function create()
     {
-        return "Create";
+        return view('admin.categories.create');
     }
 
     public function store(Request $request)
@@ -24,12 +24,12 @@ class CategoryController extends Controller
 
     public function show(Category $category)
     {
-        return "Show";
+        return view('admin.categories.show');
     }
 
     public function edit(Category $category)
     {
-        return "Edit";
+        return view('admin.categories.edit');
     }
 
     public function update(Request $request, Category $category)
