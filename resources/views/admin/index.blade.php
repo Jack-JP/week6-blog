@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Single post')
+@section('title', 'All posts')
 
 @section('content')
 <div class="container">
@@ -10,13 +10,7 @@
                 <div class="card-header">Dashboard</div>
 
                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
+                  admin area
                 </div>
             </div>
         </div>

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Welcome')
+@section('title', 'Create')
 
 @section('content')
 <div class="container">
@@ -8,8 +8,9 @@
         <div class="col-md-8">
             <div class="card card-default">
                 <div class="card-header">Dashboard</div>
+
                 <div class="card-body">
-                    welkom page
+                    <p>Admin create post</p>
                 </div>
             </div>
         </div>
