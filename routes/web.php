@@ -5,9 +5,7 @@
 | Public post Routes
 |--------------------------------------------------------------------------
 */
-Route::get('/', function(){
- return view('post.index');
-});
+Route::get('/', 'PostController@index');
 
 
 Auth::routes();
@@ -21,9 +19,13 @@ Route::get('/admin', function(){
  return view('admin.index');
 });
 
+<<<<<<< HEAD
 /*
 |--------------------------------------------------------------------------
 | Category Routes
 |--------------------------------------------------------------------------
 */
 Route::resource('/admin/category', 'CategoryController');
+=======
+Route::resource('/post', 'PostController');
+>>>>>>> 07ac3dd6f4342e045621694b43be1b09819bd961

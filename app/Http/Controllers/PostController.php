@@ -14,7 +14,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $posts = Post::all();
+        return view('post.index', compact('posts'));
     }
 
     /**
@@ -24,7 +25,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view ('post.create');
     }
 
     /**
@@ -35,7 +36,15 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $request->validate([
+         'title' => 'required|max:255',
+         'body' => 'required|max:255',
+       ]);
+       $post = new Post();
+       $post->title = $request->input('title');
+       $post->body = $request->input('body');
+       $post->save();
+       return redirect('/');
     }
 
     /**
@@ -46,7 +55,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        return view('post.show');
     }
 
     /**
