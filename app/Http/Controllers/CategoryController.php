@@ -9,7 +9,8 @@ class CategoryController extends Controller
 {
     public function index()
     {
-      return view('admin.categories.index');
+      $categories = Category::latest()->get();
+      return view('admin.categories.index', compact('categories'));
     }
 
     public function create()
@@ -19,7 +20,15 @@ class CategoryController extends Controller
 
     public function store(Request $request)
     {
-        return "Store";
+        $request->validate([
+          'name' => 'required',
+        ]);
+
+        $category = new Category;
+        $category->name = $request->input('name');
+        $category->save();
+
+        return redirect()->route('category.index');
     }
 
     public function show(Category $category)
