@@ -14,7 +14,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::latest()->get();
         return view('post.index', compact('posts'));
     }
 
@@ -38,7 +38,7 @@ class PostController extends Controller
     {
        $request->validate([
          'title' => 'required|max:255',
-         'body' => 'required|max:255',
+         'body' => 'required|max:2000',
        ]);
        $post = new Post();
        $post->title = $request->input('title');
