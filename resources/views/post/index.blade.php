@@ -24,7 +24,7 @@
               <a href="#" class="btn btn-primary">Read More &rarr;</a>
             </div>
             <div class="card-footer text-muted">
-              Posted on January 1, 2017 by
+              Posted {{$post->created_at->diffForHumans()}} by
               <a href="#">Start Bootstrap</a>
             </div>
           </div>
