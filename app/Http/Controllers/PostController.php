@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Comment;
 use App\Category;
 use App\Post;
 use Illuminate\Http\Request;
@@ -32,12 +33,13 @@ class PostController extends Controller
        return redirect('/');
     }
 
-    public function show(Post $post)
+    public function show($id)
     {
 
-      $user = $post->user->name;
+
+      $singlePost = Post::find($id);
       $categories = Category::orderBy('name', 'desc')->take(6)->get();
-      return view('post.show', compact('categories', 'user'));
+      return view('post.show', compact('categories', 'singlePost'));
     }
 
     public function edit(Post $post)

@@ -33,3 +33,10 @@ Route::resource('/admin/category', 'CategoryController');
 |--------------------------------------------------------------------------
 */
 Route::resource('/admin/user', 'UserController');
+
+/*
+|--------------------------------------------------------------------------
+| Comment Routes
+|--------------------------------------------------------------------------
+*/
+Route::resource('/comment', 'CommentController');
