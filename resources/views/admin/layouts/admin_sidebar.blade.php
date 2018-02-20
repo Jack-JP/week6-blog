@@ -1,5 +1,5 @@
-<div class="card bg-info">
-    <div class="card-header"><a class="text-muted" href="/admin">Dashboard</a> </div>
+<div class="card bg-primary">
+    <div class="card-header"><a class="text-white" href="/admin">Dashboard</a> </div>
     <div class="card-body bg-light list_sidebar">
         <ul class="list-group list-group-flush ">
           <li class="list-group-item"><a href="#">Posts</a></li>
