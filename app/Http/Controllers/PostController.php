@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Category;
 use App\Post;
 use Illuminate\Http\Request;
 
@@ -9,8 +9,9 @@ class PostController extends Controller
 {
     public function index()
     {
+        $categories = Category::orderBy('name', 'desc')->take(6)->get();
         $posts = Post::latest()->get();
-        return view('post.index', compact('posts'));
+        return view('post.index', compact('posts','categories'));
     }
 
     public function create()
@@ -33,7 +34,8 @@ class PostController extends Controller
 
     public function show(Post $post)
     {
-        return view('post.show');
+      $categories = Category::orderBy('name', 'desc')->take(6)->get();
+      return view('post.show', compact('categories'));
     }
 
     public function edit(Post $post)
