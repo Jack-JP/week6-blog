@@ -16,7 +16,7 @@
           <!-- Author -->
           <p class="lead">
             by
-            <a href="#">Start Bootstrap</a>
+            <a href="#">{{ $user }}</a>
           </p>
 
           <hr>

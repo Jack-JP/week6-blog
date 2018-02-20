@@ -34,8 +34,10 @@ class PostController extends Controller
 
     public function show(Post $post)
     {
+
+      $user = $post->user->name;
       $categories = Category::orderBy('name', 'desc')->take(6)->get();
-      return view('post.show', compact('categories'));
+      return view('post.show', compact('categories', 'user'));
     }
 
     public function edit(Post $post)
