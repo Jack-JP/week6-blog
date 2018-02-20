@@ -19,13 +19,8 @@
             <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
             <div class="card-body">
               <h2 class="card-title">{{$post->title}}</h2>
-<<<<<<< HEAD
               <p class="card-text">{{$post->body}}</p>
               <a href="{{ route('post.show', $post->id) }}" class="btn btn-primary">Read More &rarr;</a>
-=======
-              <p class="card-text">{!!$post->body!!}</p>
-              <a href="#" class="btn btn-primary">Read More &rarr;</a>
->>>>>>> c66fb12a88a2fbcdf6ddbc6f9fe9084bfa7b964f
             </div>
             <div class="card-footer text-muted">
               Posted {{$post->created_at->diffForHumans()}} by
