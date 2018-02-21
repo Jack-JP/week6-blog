@@ -17,7 +17,7 @@ Auth::routes();
 */
 Route::get('/admin', function(){
  return view('admin.index');
-});
+})->middleware('auth');
 
 
 /*
@@ -25,14 +25,14 @@ Route::get('/admin', function(){
 | Category Routes
 |--------------------------------------------------------------------------
 */
-Route::resource('/admin/category', 'CategoryController');
+Route::resource('/admin/category', 'CategoryController')->middleware('auth');
 
 /*
 |--------------------------------------------------------------------------
 | User Routes
 |--------------------------------------------------------------------------
 */
-Route::resource('/admin/user', 'UserController');
+Route::resource('/admin/user', 'UserController')->middleware('auth');
 
 /*
 |--------------------------------------------------------------------------
