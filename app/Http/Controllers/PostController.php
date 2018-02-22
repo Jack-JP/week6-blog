@@ -25,14 +25,17 @@ class PostController extends Controller
        $request->validate([
          'title' => 'required|max:255',
          'body' => 'required|max:2000',
+         'image' => 'required|image'
        ]);
        $post = new Post();
        $post->title = $request->input('title');
        $post->body = $request->input('body');
+       $path = $request->file('image')->store('images', ['disk' => 'public']);
+       $post->image_url = $path;
        $post->save();
        return redirect('/');
     }
-
+    
     public function show($id)
     {
 

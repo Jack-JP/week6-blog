@@ -33,7 +33,7 @@ init_instance_callback : function(editor) {
 
                 <div class="card-body">
 
-                   <form action="{{route('post.store')}}" method="post">
+                   <form action="{{route('post.store')}}" method="post" enctype="multipart/form-data">
                        {{ csrf_field() }}
                        <div class="form-group">
                        <label>Title</label>
@@ -45,6 +45,11 @@ init_instance_callback : function(editor) {
                        </div>
                        <div id="shortcuts"></div>
                        <script>showShortcuts();</script>
+                       <div class="form-group">
+                       <label>Picture</label><br>
+                       <input type="file" name="image" accept="image/*">
+                       </div>
+
                        <input type="submit" class="btn btn-basic" value="Add post">
                    </form>
 

@@ -6,7 +6,7 @@ var shortcuts = [
 ];
 
 function showShortcuts(){
-  var html = "<h5>Shortcuts:</h5>";
+  var html = "Shortcuts:";
   html += "<ul>";
 
   for (var i = 0; i < shortcuts.length; i++){
