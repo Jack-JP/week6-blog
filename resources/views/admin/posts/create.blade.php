@@ -59,8 +59,8 @@ init_instance_callback : function(editor) {
                     <script>showShortcuts();</script>
 
                     <div class="form-group">
-                    <label>Picture</label><br>
-                    <input type="file" name="image" accept="image/*">
+                    <label>Picture URL</label><br>
+                    <input type="text" name="image">
                     </div>
 
                     <input type="submit" class="btn btn-basic" value="Add post">

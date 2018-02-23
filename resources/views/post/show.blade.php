@@ -14,9 +14,9 @@
             by <a href="#">{{ $singlePost->user->name }}</a>
           </p>
           <hr>
-          <p>Posted on {{ $singlePost->created_at->diffForHumans() }}</p>
+          <p>Posted {{ $singlePost->created_at->diffForHumans() }}</p>
           <hr>
-          <img class="img-fluid rounded" src="<?php echo asset('storage/' . $singlePost->image_url);?>" alt="">
+          <img class="img-fluid rounded" src="{{$singlePost->image_url}}" alt="">
           <hr>
           <p class="lead">{!! $singlePost->body !!}</p>
           <hr>

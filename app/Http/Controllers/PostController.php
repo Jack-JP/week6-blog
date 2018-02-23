@@ -26,13 +26,13 @@ class PostController extends Controller
        $request->validate([
          'title' => 'required|max:255',
          'body' => 'required|max:2000',
-         'image' => 'required|image'
+         'image' => 'required'
        ]);
        $post = new Post();
        $post->title = $request->input('title');
        $post->body = $request->input('body');
-       $path = $request->file('image')->store('images', ['disk' => 'public']);
-       $post->image_url = $path;
+       //$path = $request->file('image')->store('images', ['disk' => 'public']);
+       $post->image_url = $request->input('image');
        $post->user_id = auth()->user()->id;
        $post->category_id = $request->input('category');
        $post->comment_id = 1;
