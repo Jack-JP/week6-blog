@@ -36,6 +36,7 @@ class PostController extends Controller
        $post->user_id = auth()->user()->id;
        $post->category_id = $request->input('category');
        $post->comment_id = 1;
+       $post->comment_active = 1;
        $post->save();
        return redirect('/');
     }
