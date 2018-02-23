@@ -44,11 +44,20 @@ init_instance_callback : function(editor) {
                     <input type="text" class="form-control" name="title" required>
                     </div>
                     <div class="form-group">
+                      <label>Category</label><br>
+                      <select name="category" required>
+                        @foreach ($categories as $category)
+                        <option value="{{$category->id}}">{{$category->name}}</option>
+                        @endforeach
+                      </select>
+                    </div>
+                    <div class="form-group">
                     <label>Body</label>
                     <textarea id="text-editor" name="body" class="form-control"></textarea>
                     </div>
                     <div id="shortcuts"></div>
                     <script>showShortcuts();</script>
+
                     <div class="form-group">
                     <label>Picture</label><br>
                     <input type="file" name="image" accept="image/*">

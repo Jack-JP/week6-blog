@@ -17,7 +17,8 @@ class PostController extends Controller
 
     public function create()
     {
-        return view ('admin.posts.create');
+        $categories = Category::orderBy('name', 'desc')->take(6)->get();
+        return view ('admin.posts.create', compact('categories'));
     }
 
     public function store(Request $request)
@@ -32,6 +33,9 @@ class PostController extends Controller
        $post->body = $request->input('body');
        $path = $request->file('image')->store('images', ['disk' => 'public']);
        $post->image_url = $path;
+       $post->user_id = auth()->user()->id;
+       $post->category_id = $request->input('category');
+       $post->comment_id = 1;
        $post->save();
        return redirect('/');
     }
