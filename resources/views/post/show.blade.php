@@ -5,7 +5,7 @@
 @section('content')
 <div class="container">
   <div class="row">
-    {{ $singlePost }}
+
   </div>
       <div class="row">
         <div class="col-lg-8">
@@ -18,10 +18,22 @@
           <hr>
           <img class="img-fluid rounded" src="<?php echo asset('storage/' . $singlePost->image_url);?>" alt="">
           <hr>
-          <p class="lead">{{ $singlePost->body }}</p>
+          <p class="lead">{!! $singlePost->body !!}</p>
           <hr>
 
           @if($singlePost->comment_active)
+
+
+            @foreach( $singlePost->comment as $comment)
+              <div class="media mb-4">
+                <img height="80" width="80" class="d-flex mr-3 rounded-circle" src="http://www.nce.ufrj.br/ginape/imagens/avatar.png" alt="user">
+                <div class="media-body">
+                  <h5 class="mt-0">{{$comment->user->name}}</h5>
+                  {{$comment->body}}
+                </div>
+              </div>
+            @endforeach
+
             <div class="card my-4">
               <h5 class="card-header">Leave a Comment:</h5>
               <div class="card-body">
@@ -39,15 +51,7 @@
               </div>
             </div>
 
-            @foreach( $singlePost->comment as $comment)
-              <div class="media mb-4">
-                <img height="80" width="80" class="d-flex mr-3 rounded-circle" src="http://www.nce.ufrj.br/ginape/imagens/avatar.png" alt="user">
-                <div class="media-body">
-                  <h5 class="mt-0">{{$comment->user->name}}</h5>
-                  {{$comment->body}}
-                </div>
-              </div>
-            @endforeach
+
           @else
 
             <div class="card my-4">
@@ -58,46 +62,7 @@
 
         </div>
 
-        <div class="col-md-4">
-          <div class="card my-4">
-            <h5 class="card-header">Search</h5>
-            <div class="card-body">
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search for...">
-                <span class="input-group-btn">
-                  <button class="btn btn-secondary" type="button">Go!</button>
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Categories Widget -->
-          <div class="card my-4">
-            <h5 class="card-header">Categories</h5>
-            <div class="card-body">
-              <div class="row">
-                @foreach($categories as $category)
-                  <div class="col-lg-6">
-                    <ul class="list-unstyled mb-0">
-                      <li>
-                        <a href="#">{{ $category->name }}</a>
-                      </li>
-                    </ul>
-                  </div>
-                @endforeach
-              </div>
-            </div>
-          </div>
-
-          <!-- Side Widget -->
-          <div class="card my-4">
-            <h5 class="card-header">Side Widget</h5>
-            <div class="card-body">
-              You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
-            </div>
-          </div>
-
-        </div>
+        @include('layouts.sidebar')
 
       </div>
       <!-- /.row -->
