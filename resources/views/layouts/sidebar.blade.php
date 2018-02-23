@@ -15,15 +15,15 @@
   </div>
 -->
   <!-- Categories Widget -->
-<!--          <div class="card my-4">
-    <h5 class="card-header">Categories</h5>
+          <div class="card my-4">
+    <h5 class="card-header">Filter by category</h5>
     <div class="card-body">
       <div class="row">
         @foreach($categories as $category)
           <div class="col-lg-6">
             <ul class="list-unstyled mb-0">
               <li>
-                <a href="#">{{ $category->name }}</a>
+                <a href="" onclick="updateShownCategory({{$category->id}});return false;">{{ $category->name }}</a>
               </li>
             </ul>
           </div>
@@ -31,7 +31,7 @@
       </div>
     </div>
   </div>
--->
+
   <!-- Side Widget -->
   <div class="card my-4">
     <h5 class="card-header">About my blog</h5>
@@ -41,3 +41,5 @@
   </div>
 
 </div>
+
+<script src="{{ asset('js/selectCategory.js') }}"></script>
